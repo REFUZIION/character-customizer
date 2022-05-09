@@ -1,0 +1,100 @@
+/*Old facial CSS */
+
+.hair1 {
+	background-image: url(../img/hair/hair_1.png);
+}
+.hair2 {
+	background-image: url(../img/hair/hair_2.png);
+}
+.hair3 {
+	background-image: url(../img/hair/hair_3.png);
+}
+.hair4 {
+	background-image: url(../img/hair/hair_4.png);
+}
+
+.brows1 {
+	background-image: url(../img/brows/brows_1.png);
+}
+.brows2 {
+	background-image: url(../img/brows/brows_2.png);
+}
+.brows3 {
+	background-image: url(../img/brows/brows_3.png);
+}
+
+.eyes1 {
+	background-image: url(../img/eyes/eyes_1.png);
+}
+.eyes2 {
+	background-image: url(../img/eyes/eyes_2.png);
+}
+.eyes3 {
+	background-image: url(../img/eyes/eyes_3.png);
+}
+
+.nose1 {
+	background-image: url(../img/nose/nose_1.png);
+}
+.nose2 {
+	background-image: url(../img/nose/nose_2.png);
+}
+.nose3 {
+	background-image: url(../img/nose/nose_3.png);
+}
+
+.mouth1 {
+	background-image: url(../img/mouth/mouth_1.png);
+}
+.mouth2 {
+	background-image: url(../img/mouth/mouth_2.png);
+}
+.mouth3 {
+	background-image: url(../img/mouth/mouth_3.png);
+}
+
+.beautymark1 {
+	background-image: url(../img/beauty-marks/beautymark_1.png);
+}
+.beautymark2 {
+	background-image: url(../img/beauty-marks/beautymark_2.png);
+}
+.beautymark3 {
+	background-image: url(../img/beauty-marks/beautymark_3.png);
+}
+
+/* Improved facial details scss */
+// hair: 4 total
+@for $i from 1 through 4 {
+	.hair#{$i} {
+		background-image: url(../img/hair/hair_#{$i}.png);
+	}
+}
+
+// brows: 3 total
+@for $i from 1 through 3 {
+	.brows#{$i} {
+		background-image: url(../img/brows/brows_#{$i}.png);
+	}
+}
+
+// eyes: 3 total
+@for $i from 1 through 3 {
+	.eyes#{$i} {
+		background-image: url(../img/eyes/eyes_#{$i}.png);
+	}
+}
+
+// nose: 3 total
+@for $i from 1 through 3 {
+	.nose#{$i} {
+		background-image: url(../img/nose/nose_#{$i}.png);
+	}
+}
+
+// mouth: 3 total
+@for $i from 1 through 3 {
+	.mouth#{$i} {
+		background-image: url(../img/mouth/mouth_#{$i}.png);
+	}
+}

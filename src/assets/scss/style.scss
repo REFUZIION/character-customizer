@@ -1,0 +1,232 @@
+#container {
+	position: absolute;
+	margin: auto;
+	width: 1000px;
+	height: 625px;
+	margin-left: 20%;
+}
+body {
+	background-color: #000;
+}
+#content-wrapper {
+	margin-top: 30px;
+}
+#header {
+	width: 100%;
+	height: 630px;
+	background-image: url(../img/horse-reality.jpg);
+}
+#header .horse-overlay {
+	width: 100%;
+	height: 630px;
+	background-image: url(../img/horse.png);
+}
+
+#header .banner {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    background-color: orange;
+}
+.banner h1 {
+	font-size: 18px;
+	margin-left: 35%;
+	display: inline;
+}
+input[type="button"] {
+	background-color: orange;
+	border: none;
+	width: 150px;
+	height: 30px;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	box-shadow: 3px 4px #00000044;
+}
+input[type="button"]:hover {
+	opacity: 0.75;
+}
+
+#body {
+	position: absolute;
+	width: 794px; /* width of actual image */
+	height: 1123px; /* height of actual image */
+	background-repeat: no-repeat;
+}
+
+#background {
+	bottom: 1246px;
+	right: 1119px;
+	position: absolute;
+}
+
+.headbase {
+	background-image: url(../img/bodies/_Head_base.png);
+}
+
+#head,
+#hair,
+#brows,
+#eyes,
+#nose,
+#mouth,
+#beautymark,
+#shirt,
+#pants {
+	position: absolute;
+	width: 794px; /* width of actual image */
+	height: 1123px; /* height of actual image */
+	background-repeat: no-repeat;
+}
+
+/* simplified with scss thanks to : https://github.com/meramos/React_Dressup_Game */
+$items: (
+	"hair": 4,
+	"brows": 3,
+	"eyes": 3,
+	"nose": 3,
+	"mouth": 3,
+);
+@each $item, $total in $items {
+	@for $i from 1 through $total {
+		.#{$item}#{$i} {
+			background-image: url(../img/#{$item}/#{$item}_#{$i}.png);
+		}
+	}
+}
+
+/* scss button style loop */
+$item_buttons: (
+	"hair",
+	"brows",
+	"eyes",
+	"nose",
+	"mouth",
+	"shirt",
+	"pants",
+	"body",
+	"gender"
+);
+// Position "next" buttons
+$height: 110px;
+
+@each $item_buttons, $total in $item_buttons {
+	$height: $height + 40px; //buttons will have 30px in between (vertically)
+
+	#next#{$item_buttons} {
+		position: absolute;
+		left: 30%;
+		top: $height;
+	}
+}
+
+// Position "previous" buttons
+$height: 110px;
+
+@each $item_buttons, $total in $item_buttons {
+	$height: $height + 40px; //buttons will have 30px in between (vertically)
+
+	#previous#{$item_buttons} {
+		position: absolute;
+		left: 3%;
+		top: $height;
+	}
+}
+// beautymarks: 3 total
+@for $i from 1 through 3 {
+	.beautymark#{$i} {
+		background-image: url(../img/beauty-marks/beautymark_#{$i}.png);
+	}
+}
+
+.body1 {
+	background-image: url(../img/bodies/Skinny.png);
+}
+.body2 {
+	background-image: url(../img/bodies/Curvy.png);
+}
+.body3 {
+	background-image: url(../img/bodies/Chubby.png);
+}
+.body4 {
+	background-image: url(../img/bodies/Masculine.png);
+}
+
+.female.body1 {
+	background-image: url(../img/bodies/Skinny_breasts.png);
+}
+.female.body2 {
+	background-image: url(../img/bodies/Curvy_breasts.png);
+}
+.female.body3 {
+	background-image: url(../img/bodies/Chubby_breasts.png);
+}
+.female.body4 {
+	background-image: url(../img/bodies/Masculine_breasts.png);
+}
+
+.body1 .shirts1 {
+	background-image: url(../img/shirts/1_Skinny/shirt_1.png);
+}
+.body1 .shirts2 {
+	background-image: url(../img/shirts/1_Skinny/shirt_2.png);
+}
+.female.body1 .shirts1 {
+	background-image: url(../img/shirts/1_Skinny/female/shirt_1.png);
+}
+.female.body1 .shirts2 {
+	background-image: url(../img/shirts/1_Skinny/female/shirt_2.png);
+}
+
+.body2 .shirts1 {
+	background-image: url(../img/shirts/2_Curvy/shirt_1.png);
+}
+.body2 .shirts2 {
+	background-image: url(../img/shirts/2_Curvy/shirt_2.png);
+}
+.female.body2 .shirts1 {
+	background-image: url(../img/shirts/2_Curvy/female/shirt_1.png);
+}
+.female.body2 .shirts2 {
+	background-image: url(../img/shirts/2_Curvy/female/shirt_2.png);
+}
+
+.body3 .shirts1 {
+	background-image: url(../img/shirts/3_Chubby/shirt_1.png);
+}
+.body3 .shirts2 {
+	background-image: url(../img/shirts/3_Chubby/shirt_2.png);
+}
+.female.body3 .shirts1 {
+	background-image: url(../img/shirts/3_Chubby/female/shirt_1.png);
+}
+.female.body3 .shirts2 {
+	background-image: url(../img/shirts/3_Chubby/female/shirt_2.png);
+}
+
+.body4 .shirts1 {
+	background-image: url(../img/shirts/4_Masculine/shirt_1.png);
+}
+.body4 .shirts2 {
+	background-image: url(../img/shirts/4_Masculine/shirt_2.png);
+}
+.female.body4 .shirts1 {
+	background-image: url(../img/shirts/4_Masculine/female/shirt_1.png);
+}
+.female.body4 .shirts2 {
+	background-image: url(../img/shirts/4_Masculine/female/shirt_2.png);
+}
+
+.body1 .pants1 {
+	background-image: url(../img/pants/1_Skinny/jeans_grey.png);
+}
+.body2 .pants1 {
+	background-image: url(../img/pants/2_Curvy/jeans_grey.png);
+}
+.body3 .pants1 {
+	background-image: url(../img/pants/3_Chubby/jeans_grey.png);
+}
+.body4 .pants1 {
+	background-image: url(../img/pants/4_Masculine/jeans_grey.png);
+}
